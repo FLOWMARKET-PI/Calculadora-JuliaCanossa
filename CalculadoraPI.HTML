@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div class="caixa-financeira">
+        <h2>CALCULADORA FINANCEIRA</h2>
+        <h5> Quantidade de clientes </h5>
+        <input id="ipt_clientes" class="">
+        <button onclick="button()" class="button">Calcular</button> 
+        <h6> baseada em 41,3% de referência e consumo diário estimado de R$ 35,80</h6>
+        <div id="div_exibir"></div>
+
+    </div>
+
+</body>
+<script>
+function button() {
+let clientes = Number (ipt_clientes.value);
+let perdaporcent = 0.41;
+let ticketmedio = 35.8;
+
+let perdadiaria = clientes * perdaporcent * ticketmedio;
+let perdamensal = perdadiaria * 30;
+
+div_exibir.innerHTML = `<span style="color: aliceblue;"> Potencial impacto financeiro: ${perdamensal.toFixed(2)}</span>`;
+
+}
+</script>
+</html>
